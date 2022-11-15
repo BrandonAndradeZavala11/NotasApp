@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gris"
+    tools:context=".agregarNotas">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="746dp"
+        android:layout_marginBottom="20dp"
+        android:clipToPadding="false"
+        android:paddingBottom="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true">
+
+            <!--Agrega la imagen para regresar atras -->
+
+            <ImageView
+                android:id="@+id/atras"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/imgatras"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/letras">
+
+            </ImageView>
+
+            <!--Agrega la imagen para agregar una nota -->
+
+            <ImageView
+                android:id="@+id/addnota"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/hechanota"
+                android:contentDescription="@string/app_name"
+                android:padding="4dp"
+                android:src="@drawable/imgagregar"
+                app:layout_constraintBottom_toBottomOf="@id/atras"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/atras"
+                app:tint="@color/white">
+
+            </ImageView>
+
+            <!--Agrega el campo de nombre -->
+
+            <EditText
+                android:id="@+id/nombrenota"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="20dp"
+                android:background="@null"
+                android:fontFamily="@font/alfa_slab_one"
+                android:hint="Nombre de la Nota"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="16dp"
+                app:layout_constraintTop_toBottomOf="@id/atras">
+
+            </EditText>
+
+            <TextView
+                android:id="@+id/datos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alfa_slab_one"
+                android:includeFontPadding="false"
+                android:textColor="@color/grisclaro"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="@id/nombrenota"
+                app:layout_constraintStart_toStartOf="@id/nombrenota"
+                app:layout_constraintTop_toBottomOf="@id/nombrenota">
+
+            </TextView>
+
+            <!--Agrega el campo de descripcion -->
+
+            <EditText
+                android:id="@+id/descripcion"
+                android:layout_width="367dp"
+                android:layout_height="99dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                android:background="@null"
+                android:fontFamily="@font/alfa_slab_one"
+                android:hint=" Anota la descripcion"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="textMultiLine"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/grisclaro"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/datos">
+
+            </EditText>
+
+            <!--Agrega el campo de fecha -->
+
+            <EditText
+                android:id="@+id/fecha"
+                android:layout_width="367dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                android:background="@null"
+                android:fontFamily="@font/alfa_slab_one"
+                android:hint=" Anota la fecha"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="textMultiLine"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/grisclaro"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/descripcion">
+
+            </EditText>
+
+            <!--Agrega un separador para darle mas imagen -->
+
+            <View
+                android:id="@+id/separador"
+                android:layout_width="10dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="25dp"
+                android:background="@drawable/descripcion"
+                app:layout_constraintBottom_toBottomOf="@id/nombrenota"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/descripcion"
+                app:layout_constraintVertical_bias="0.059">
+
+            </View>
+
+            <!--Agrega el campo de editar -->
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="367dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                android:background="@null"
+                android:fontFamily="@font/alfa_slab_one"
+                android:hint=" Ingresa tu email"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="textMultiLine"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/grisclaro"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fecha">
+
+            </EditText>
+
+            <!--Agrega el campo de propietario -->
+
+            <EditText
+                android:id="@+id/propietario"
+                android:layout_width="367dp"
+                android:layout_height="61dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                android:background="@null"
+                android:fontFamily="@font/alfa_slab_one"
+                android:hint=" Ingresa tu nombre"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="textMultiLine"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/grisclaro"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/email">
+
+            </EditText>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gris"
+    tools:context=".MainActivity">
+
+    <!-- El siguiente codigo agrega el campo para buscar una nota -->
+    <LinearLayout
+        android:id="@+id/llbuscador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buscador"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        tools:layout_editor_absoluteX="-8dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints">
+
+        <!-- aqui se agrega la imagen para darle estetica -->
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/imgbuscador"
+            app:tint="@color/white" />
+
+        <!-- El siguiente codigo se utiliza para poder escribir o sea creamos un editText -->
+
+        <EditText
+            android:id="@+id/edtTexto"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
+            android:background="@null"
+            android:fontFamily="@font/alfa_slab_one"
+            android:hint="Busca tu nota aqui"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:textColor="@color/letras"
+            android:textColorHint="@color/letras"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+    <!-- Aqui agregamos una tabla que utilizaremos para utilizarla en las notas -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tablanotas"
+        android:layout_width="409dp"
+        android:layout_height="402dp"
+        android:clipToPadding="false"
+        android:paddingStart="0dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@id/funciones"
+        app:layout_constraintTop_toBottomOf="@id/llbuscador"
+        app:layout_constraintVertical_bias="0.131"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <!-- El siguiente codigo agrega el campo para agregar una nota -->
+
+    <LinearLayout
+        android:id="@+id/funciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="172dp"
+        android:background="@color/grisclaro"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <!-- El siguiente codigo agrega la imagen de agregar una nota -->
+
+        <ImageView
+            android:id="@+id/agregar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/imgagregar"
+            app:tint="@color/white">
+
+        </ImageView>
+
+        <!--Agrega el texto para poder visualizar para que es la funcion -->
+
+        <EditText
+            android:id="@+id/agregarNota"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginStart="20dp"
+            android:background="@null"
+            android:fontFamily="@font/alfa_slab_one"
+            android:hint="Agrega una nueva nota"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:textColor="@color/letras"
+            android:textColorHint="@color/letras"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+    <!-- El siguiente codigo agrega un nuveo LinearLayout para la funcion de borrar -->
+
+    <LinearLayout
+        android:id="@+id/funcionborrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="96dp"
+        android:background="@color/grisclaro"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="-3dp">
+
+        <!-- El siguiente codigo agrega la imagen para la funcion de borrar -->
+
+        <ImageView
+            android:id="@+id/borrar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/imgborrar"
+            app:tint="@color/white">
+
+        </ImageView>
+
+        <!--Agrega el texto para poder visualizar para que es la funcion -->
+
+        <EditText
+            android:id="@+id/borrarnota"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginStart="20dp"
+            android:background="@null"
+            android:fontFamily="@font/alfa_slab_one"
+            android:hint="Borrar una nota"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:textColor="@color/letras"
+            android:textColorHint="@color/letras"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <!-- El siguiente codigo agrega un nuveo LinearLayout para la funcion de editar -->
+
+    <LinearLayout
+        android:id="@+id/editarNotas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@color/grisclaro"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <!-- El siguiente codigo agrega una imagen para la funcion de borrar -->
+
+        <ImageView
+            android:id="@+id/editar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/imgeditar"
+            app:tint="@color/white">
+
+        </ImageView>
+
+        <!--Agrega el texto para poder visualizar para que es la funcion -->
+
+        <EditText
+            android:id="@+id/editarnota"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginStart="20dp"
+            android:background="@null"
+            android:fontFamily="@font/alfa_slab_one"
+            android:hint="Editar una nota"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:textColor="@color/letras"
+            android:textColorHint="@color/letras"
+            android:textSize="18dp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
